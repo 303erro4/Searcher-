@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexus Legacy Searcher</title>
+<meta name="description" content="Nexus Legacy Searcher — recherche avancée .">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<div class="ambient ambient-1"></div><div class="ambient ambient-2"></div><div class="network"></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="brand" data-go="accueil"><span class="brand-mark">✦</span><span><b>Nexus Legacy</b><small>Searcher</small></span></button>
+    <nav id="nav">
+      <button class="admin-hotspot" id="adminHotspot" aria-label="Administration" title=""> </button>
+      <button data-go="accueil" class="nav-item on"><span>⌂</span> Accueil</button>
+      <button data-go="recherche" class="nav-item"><span>⌕</span> Recherche</button>
+      <button data-go="tarifs" class="nav-item"><span>▣</span> Tarifs</button>
+      <button data-go="boutique" class="nav-item"><span>🛒</span> Boutique <em>NOUVEAU</em></button>
+      <button data-go="contact" class="nav-item"><span>▢</span> Contact</button>
+    </nav>
+    <div class="top-actions">
+      <span class="credits-counter" id="creditCounter">0 crédits</span><span class="counter">● <span id="onlineCount">112</span></span>
+      <a class="social discord" href="https://discord.gg/zjGsPCcGsu" target="_blank" rel="noopener noreferrer">Discord</a>
+      <button class="login" id="authBtn">Connexion</button>
+    </div>
+  </div>
+</header>
+<div class="shop-ticker"><div class="ticker-track"><span>✦ FREE Uber Eat <b>30€</b></span><span>✦ Tech Discord Nitro 1 AN <b>10€</b></span><span>✦ Tech Refund toute marque <b>20€</b></span><span>✦ Tech Snap+ Unlimited <b>10€</b></span><span>✦ Tech Redbull 10ct <b>10€</b></span><span>✦ Deezer 1 an <b>15€</b></span><span>✦ Spotify 1 an <b>15€</b></span></div></div>
+
+<main class="shell">
+  <section class="page on" id="page-accueil">
+    <div class="hero-home">
+      <div class="indexed-pill"><i></i> +5,8 milliards d'enregistrements indexés <span>→</span></div>
+      <h1>Le meilleur moteur français<br><span>de recherche</span></h1>
+      <p>Recherchez dans des sources ouvertes et des données publiquement accessibles. De l'email au numéro de téléphone, utilisez plusieurs critères pour la vérification, la conformité et la cybersécurité défensive.</p>
+      <div class="hero-actions"><button class="primary big" data-go="recherche">⌕ &nbsp; Commencer une recherche</button><button class="secondary big" data-go="tarifs">Voir les tarifs <strong>Dès 7€</strong></button></div>
+      <div class="quick-row"><button data-search="codepostal">▣ Code postal</button><button data-search="ip">◉ Adresse IP</button><button data-search="identifiant">▤ Identifiant</button><button data-search="naissance">🎂 Date de naissance</button><button data-search="pseudo">♟ Pseudo</button><button data-search="pays">⚑ Pays</button></div>
+      <div class="home-stats"><div><b>5.8B+</b><span>DONNÉES</span></div><div><b>5+</b><span>CRITÈRES</span></div><div><b>&lt;MEILLEUR</b><span>RÉSULTATS</span></div></div>
+    </div>
+  </section>
+
+  <section class="page" id="page-recherche">
+    <div class="page-heading"><div><h2>Recherche <span>avancée</span></h2><p>Trouvez ce que vous cherchez, parmi vos données de démonstration. · <strong>1 crédit = 1 recherche</strong></p></div><div class="indexed-pill small"><i></i> +5,8 milliards d'enregistrements indexés →</div></div>
+    <div class="search-line"><div class="main-search"><span>⌕</span><input id="quickSearch" placeholder="Rechercher par nom, email, téléphone, entreprise, ville..." autocomplete="off"></div><button class="primary search-submit" id="searchQuickBtn">⌕ &nbsp; Lancer la recherche <span>→</span></button></div>
+    <div class="chips" id="searchChips"><button data-key="email">✉ Email</button><button data-key="telephone">⌕ Téléphone</button><button data-key="nomprenom">♟ Nom &amp; Prénom</button><button data-key="entreprise">▥ Entreprise</button><button data-key="adresse">⌖ Adresse</button><button data-key="ville">⌖ Ville</button><button data-key="codepostal">▣ Code postal</button><button data-key="pseudo">♟ Pseudo</button><button data-key="pays">⚑ Pays</button></div>
+
+    <div class="panel filters-panel"><div class="panel-title"><span class="panel-icon">☷</span><h3>Filtres de recherche</h3><button id="toggleFilters">⌃</button></div>
+      <div id="advancedFilters" class="filter-grid">
+        <div class="field"><label for="f-nom">Nom</label><input id="f-nom" placeholder="Dupont"></div>
+        <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" placeholder="Marie"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" placeholder="marie@exemple.com"></div>
+        <div class="field"><label for="f-ville">Ville</label><input id="f-ville" placeholder="Paris"></div>
+        <div class="field"><label for="f-code-postal">Code postal</label><input id="f-code-postal" placeholder="75001"></div>
+        <div class="field"><label for="f-naissance">Date / année de naissance</label><input id="f-naissance" placeholder="1988"></div>
+        <div class="field"><label for="f-tel">Numéro de téléphone</label><input id="f-tel" placeholder="0612345678"></div>
+        <div class="field"><label for="f-entreprise">Entreprise</label><input id="f-entreprise" placeholder="Nova Labs"></div>
+        <div class="field"><label for="f-pseudo">Pseudo / identifiant</label><input id="f-pseudo" placeholder="pseudo"></div>
+        <div class="field"><label for="f-pays">Pays</label><input id="f-pays" placeholder="France"></div>
+        <div class="filter-actions"><button class="primary" id="searchBtn">⌕ Rechercher</button><button class="secondary" id="resetBtn">↻ Réinitialiser les filtres</button></div>
+      </div>
+      <div id="searchMsg"></div>
+    </div>
+</div>
+    <div class="panel results-panel"><div class="results-toolbar"><div><span class="panel-icon">◉</span><h3>Résultats</h3></div><div class="result-tools"><span id="corpusInfo"></span><button class="secondary tiny" id="exportBtn">⇩ Exporter</button><button class="view active">▦</button><button class="view">☷</button></div></div><div id="resultZone"><div class="welcome-result"><div class="check">✓</div><h3>Merci d'utiliser Nexus Legacy Searcher !</h3><p>Lancez une recherche pour afficher les correspondances.</p></div></div></div>
+  </section>
+
+  <section class="page simple-page" id="page-tarifs"><div class="page-heading"><div><h2>Tarifs <span>simples</span></h2><p>Choisissez l'offre qui correspond à votre utilisation.</p></div></div><div class="cards-3"><article><span>START</span><h3>7€</h3><p>Recherche locale et historique de base.</p><button class="primary plan-choice" data-plan="START — 7€">Choisir</button></article><article class="featured"><span>PRO</span><h3>19€</h3><p>Recherche avancée, exports et outils supplémentaires.</p><button class="primary plan-choice" data-plan="PRO — 19€">Choisir</button></article><article><span>ULTIMATE</span><h3>39€</h3><p>Accès complet aux fonctions Nexus Legacy.</p><button class="primary plan-choice" data-plan="ULTIMATE — 39€">Choisir</button></article></div></section>
+  <section class="page simple-page" id="page-boutique"><div class="page-heading"><div><h2>Boutique <span>Nexus</span></h2><p>Produits et services numériques.</p></div></div><div class="cards-3"><article><span>NOUVEAU</span><h3>Tech Basic Fit</h3><p>30€</p><button class="primary">Voir</button></article><article><span>NOUVEAU</span><h3>Tech Snap+</h3><p>20€</p><button class="primary">Voir</button></article><article><span>POPULAIRE</span><h3>Deezer 1 an</h3><p>15€</p><button class="primary">Voir</button></article></div></section>
+  <section class="page simple-page" id="page-contact"><div class="info-panel contact-panel"><h2>Contact <span>Nexus</span></h2><p>Pour toute demande, commande ou question concernant un tarif, rejoignez directement notre serveur Discord.</p><div class="contact-discord-card"><div><span class="contact-label">SERVEUR DISCORD</span><h3>Nexus Legacy</h3><p>Notre équipe vous répond sur le serveur.</p></div><a class="primary big" href="https://discord.gg/SFYPrQwX2C" target="_blank" rel="noopener noreferrer">Rejoindre le Discord →</a></div><div id="selectedPlan" class="selected-plan" hidden></div></div></section>
+
+  <section class="page" id="page-auth"><div class="auth-card"><h2>Accès <span>Nexus Legacy</span></h2><p>Connectez-vous pour accéder au moteur de recherche.</p><div class="tabs" id="authTabs"><button data-tab="login" class="on">Connexion</button><button data-tab="signup">Créer un compte</button></div><label id="pseudoLabel">Pseudo</label><input id="au-pseudo" type="text" placeholder="Votre pseudo" autocomplete="username"><label>Email</label><input id="au-email" type="email" placeholder="vous@exemple.com"><label>Mot de passe</label><input id="au-pass" type="password" placeholder="••••••••"><button class="primary full" id="authSubmit">Se connecter</button><div id="authMsg"></div></div></section>
+  <section class="page" id="page-parametres"><div class="auth-card"><h2>Paramètres <span>compte</span></h2><p id="accountCurrent">Aucun compte connecté</p><label>Mot de passe actuel</label><input id="accountOldPass" type="password"><label>Nouveau mot de passe</label><input id="accountNewPass" type="password"><div class="hero-actions left"><button class="primary" id="changePasswordBtn">Changer le mot de passe</button><button class="secondary" id="logoutBtn">Déconnexion</button><button class="danger" id="deleteAccountBtn">Supprimer le compte</button></div><div id="accountMsg"></div></div></section>
+
+  <section class="page" id="page-admin"><div class="admin-wrap"><div class="page-heading"><div><h2>Administration <span>Nexus</span></h2><p>Gestion des comptes, crédits et accès.</p></div></div><div id="adminLoginPanel" class="auth-card admin-login"><h3>Accès administrateur</h3><p>Entrez le mot de passe administrateur.</p><input id="adminPassword" type="password" placeholder="Mot de passe admin"><button class="primary full" id="adminLoginBtn">Ouvrir l'administration</button><div id="adminMsg"></div></div><div id="adminPanel" class="panel" hidden><div class="results-toolbar"><div><span class="panel-icon">◈</span><h3>Utilisateurs</h3></div><button class="secondary tiny" id="adminRefresh">↻ Actualiser</button></div><div id="adminUsers" class="admin-users"></div></div></div></section>
+</main>
+<footer>Nexus Legacy Searcher · interface de démonstration</footer>
+<script src="app.js"></script>
+</body>
+</html>

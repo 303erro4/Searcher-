@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: nexus-legacy-searcher
+    env: python
+    plan: free
+    region: frankfurt
+    buildCommand: "python -m compileall ."
+    startCommand: "python server.py"
+    healthCheckPath: "/api/health"
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8000
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: NEXUS_ADMIN_PASSWORD
+        value: nexus
+      - key: GEMINI_API_KEY
+        sync: false
